@@ -74,7 +74,6 @@ func Release() error {
 	return sh.RunV("goreleaser", args...)
 }
 
-// Maybe we can  move this to release-utils
 func EnsureBinary(binary, cmd, version string) error {
 	fmt.Printf("Checking if `%s` version %s is installed\n", binary, version)
 	found, err := pkg.IsCommandAvailable(binary, cmd, "")
@@ -96,7 +95,6 @@ func EnsureBinary(binary, cmd, version string) error {
 	return nil
 }
 
-// Maybe we can  move this to release-utils
 func InstallKO(version string) error {
 	fmt.Println("Will install `ko`")
 	target := "ko"
@@ -129,7 +127,6 @@ func InstallKO(version string) error {
 	return archive.DownloadToGopathBin(opts)
 }
 
-// Maybe we can  move this to release-utils
 func InstallGoReleaser(version string) error {
 	fmt.Println("Will install `goreleaser` version `%s`", version)
 	target := "goreleaser"
